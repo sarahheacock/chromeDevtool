@@ -1,32 +1,14 @@
-// const beautify = require('js-beautify').js_beautify
-// const temp = {
-//   "window": "www.google.com"
-// }
-const newLine = [
-  ';',
-  '{',
-  '}',
-  ';',
-  '//'
-]
 
 
-// const myHeaders = new Headers({'Content-Type': 'application/json'});
-//
-// const myInit = { method: 'POST',
-//                headers: myHeaders,
-//                body: JSON.stringify({code: str}),
-//                mode: 'cors',
-//                cache: 'default' };
-//
-// fetch('http://localhost:3000/', myInit).then(res => res.json()).then(function(myBlob) {
-//   console.log(myBlob);
-//   // var objectURL = URL.createObjectURL(myBlob);
-//   // myImage.src = objectURL;
-// });
 function open(url){
-  // window.alert(url);
-  chrome.devtools.panels.openResource(url, 0, function(){})
+  // window.alert(window.location);
+  // fetch url
+  fetch(url).then(res => {
+    return res.text();
+  }).then(data => {
+    // document.querySelector('#myframe').innerHTML = data;
+    document.getElementById('myframe').src = "data:text/html;charset=utf-8," + escape(data);
+  });
 }
 
 function toggle(source){
@@ -46,15 +28,16 @@ function toggle(source){
         link.addEventListener('click', function(){
           open(db[word]);
         });
+        element.append(" ");
         element.append(link);
       }
       else {
-        element.append(word);
+        element.append(" " + word);
       }
     })
 
-    // document.querySelector('#main').removeChild();
-    document.querySelector('#main').append(element);
+    document.querySelector('#main').innerHTML = '';
+    document.querySelector('#main').prepend(element);
   });
 }
 
@@ -80,5 +63,8 @@ function toggle(source){
     });
 
     toggle(res[0]);
+    document.getElementById('myframe').addEventListener('click', function(){
+      window.alert('click');
+    });
   });
 })();

@@ -1,5 +1,29 @@
 body {
   font-size: 80%;
+  margin: 0;
+  padding: 0px;
+  /* background-color: whitesmoke; */
+  /* height: 100vh; */
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+h1 {
+  text-align: center;
+  width: 100%;
+  background-color: white;
+}
+
+.row {
+  padding: 1em;
+}
+
+
+.btn {
+  font-size: 100%;
+  display: block;
+  margin-bottom: 3px;
+  width: 100%;
 }
 
 .link {
@@ -10,9 +34,32 @@ body {
   color: #5bc0de;
 }
 
-#main {
-  padding: 1em;
+#mynav {
+  margin: 1em;
+  /* margin-top: 2em; */
+  height: 90vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
+
+#myframe {
+  margin: 1em;
+  height: 45vh;
+  width: 95%;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+
+#main {
+  background-color: white;
+  margin: 1em;
+  padding: 1em;
+  height: 40vh;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+
+/* @media */
 
 /* #-webkit-web-inspector .source-code {
 	left: auto;

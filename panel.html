@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="panel.css">
 	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 	<script type="text/javascript" src="database.js"></script>
 </head>
 <body id="panel">
-	<nav id="mynav"></nav>
-	<div id="main"></div>
-	<script src="panel.js"></script>
+	<div class="row">
+		<div class="col-sm-3">
+			<nav id="mynav"></nav>
+		</div>
+		<div class="col-sm-9">
+			<iframe id="myframe"></iframe>
+			<div id="main"></div>
+			<script src="panel.js"></script>
+		</div>
+	</div>
 </body>
 </html>
